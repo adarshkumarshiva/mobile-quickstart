@@ -4,14 +4,14 @@ from twilio.util import TwilioCapability
 import twilio.twiml
 
 # Account Sid and Auth Token can be found in your account dashboard
-ACCOUNT_SID = 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-AUTH_TOKEN = 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY'
+ACCOUNT_SID = 'ACf3713370daf708c78e7c405f76bbd718'
+AUTH_TOKEN = 'b04ca0ba46054da1d1ca80d42c1bfd73'
 
 # TwiML app outgoing connections will use
-APP_SID = 'APZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ'
+APP_SID = 'APcef7dadb77b7d61875ebde73e7d0784f'
 
-CALLER_ID = '+12345678901'
-CLIENT = 'jenny'
+CALLER_ID = '+14085122067'
+CLIENT = 'cupola'
 
 app = Flask(__name__)
 
@@ -30,7 +30,7 @@ def token():
   # This allows incoming connections to client (if specified)
   client = request.values.get('client')
   if client != None:
-    capability.allow_client_incoming(client)
+    capability.allow_client_incoming("cupola")
 
   # This returns a token to use with Twilio based on the account and capabilities defined above
   return capability.generate()
